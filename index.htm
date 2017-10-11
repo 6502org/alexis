@@ -1,0 +1,227 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>A ROMless 6502 Microcomputer</title>
+</head>
+
+<body bgcolor="#000000" text="#FFFF00" link="#FF0000"
+vlink="#FF0000">
+
+<h1 align="center"><font color="#FF0000" face="Arial Black">A
+ROMless 6502 Microcomputer</font></h1>
+
+<p align="center"><font face="Arial Black"><img src="cpu.jpg"
+width="306" height="94"> </font></p>
+
+<hr>
+
+<p><font color="#0000FF" face="Arial Black">Hi all.</font></p>
+
+<p><font color="#0000FF" face="Arial Black">For the past 18
+months or so I have wanted to create my own 6502 or Z80 based
+single board microcomputer. I started looking at schematics and
+immidiatly hit a snag - EEPROM's. None of my local electronic
+stores had any 8 bit EEPROM's. Just EPROM's which require a UV
+erasor and a programmer. Programmers are expensive and UV erasors
+more so. Just reacently I was on the Net and though I'd look up
+the classic Altair 8800 schematics to see how they looked. I
+realised that the Altair didn't have any form of ROM. Ah, my
+solution. A few days later I had some (theoreticly) working
+schematics.</font></p>
+
+<p><font color="#0000FF" face="Arial Black">I decided to use a
+6502 because, well, I wanted to. I suppose Z80's would have been
+easier to use in this SBC because of a very usefull tri-stating
+data and address bus. Perhaps next time...</font></p>
+
+<hr>
+
+<p><font color="#0000FF" face="Arial Black">Tri-state devices are
+very usefull here. Regular digital devices have two states, 1 and
+0, +5v and 0v, etc. The problem is that if you have more that one
+device like this on a line they conflict. This is because if a
+device has a low output and another has a high output, the line
+will register as low because the +5v high line will be pulled low
+by the 0v low line. Tri-state devices can go into a 'high
+impendance' mode which is electrically similar to disconnecting
+the component from the line, i.e. no current can pass through the
+I/O lines, thus iliminating the 0v pulling the +5v down. (Not the
+best of descriptions, but could be worse).</font></p>
+
+<hr>
+
+<p><font color="#0000FF" face="Arial Black">Here is a description
+of the computer so far:</font></p>
+
+<ul>
+    <li><font color="#00FF00" face="Arial Black">6502 CPU at 2MHz</font></li>
+    <li><font color="#00FF00" face="Arial Black">16Kb of static
+        RAM</font></li>
+    <li><font color="#00FF00" face="Arial Black">DMA programmable</font></li>
+    <li><font color="#00FF00" face="Arial Black">6526 Complex
+        Interface Adapter (CIA) for I/O functions</font></li>
+</ul>
+
+<p><font color="#0000FF" face="Arial Black">Ok, so it doesn't
+actually </font><font color="#00FFFF" face="Arial Black"><strong>work</strong></font><font
+color="#0000FF" face="Arial Black">, yet. There are still a few
+bugs I need to get out (have a look at the pictures. This isn't
+exactly easy to debug).</font></p>
+
+<p><font color="#0000FF" face="Arial Black">The RAM was something
+I stumbled on almost by accident. I have just reacently got
+myself a Compaq Portable II (a 286 that must weigh about 10Kg,
+it's fine if you don't need to carry it more than 100 meters).
+Inside it there was a card called an 'ATE-2 Paxus System' (???)
+and it had two 6264 SRAM chips on it. :-)</font></p>
+
+<p align="center"><font color="#0000FF" face="Arial Black"><img
+src="6264.jpg" width="211" height="92"></font></p>
+
+<p align="left"><font color="#0000FF" face="Arial Black">The 6502
+I'm using now is from a VIC-20. A friend of mine is going to
+return a Commodore 1541 floppy drive controller board to me which
+has a 6502 on it, so I'll use that rather than risk breaking the
+VIC-20.</font></p>
+
+<hr>
+
+<p><font color="#0000FF" face="Arial Black">If you want to build
+this, you will probably want the scheamtics.</font></p>
+
+<ul>
+    <li><a href="cpu_board.gif"><font face="Arial Black">Main CPU
+        board</font></a><font face="Arial Black"> </font><font
+        color="#00FF00" face="Arial Black">(GIF, 23Kb)</font></li>
+</ul>
+
+<p><font color="#0000FF" face="Arial Black">I'm still making
+usable copies of the rest. To see the rest of them, here are some
+scans.</font></p>
+
+<ul>
+    <li><a href="DMA_scan.gif"><font face="Arial Black">DMA Board</font></a><font
+        color="#00FF00" face="Arial Black"> (GIF, 108Kb)</font></li>
+    <li><a href="CPU_scan.gif"><font face="Arial Black">CPU Board</font></a><font
+        color="#00FF00" face="Arial Black"> (GIF, 72Kb)</font></li>
+    <li><a href="MEM_scan.gif"><font face="Arial Black">Memory</font></a><font
+        face="Arial Black"> </font><font color="#00FF00"
+        face="Arial Black">(GIF, 88Kb)</font></li>
+</ul>
+
+<p><font color="#0000FF" face="Arial Black">The scans are
+shocking. The printer I used was an IBM Proprinter II clone
+(Sakata SP-1200PLUS dot matrix) and the scanner is in rather poor
+shape. Don't bother using them for anything serious. I only used
+them as a guide. I'll make proper GIF's soon...</font></p>
+
+<hr>
+
+<p><font color="#0000FF" face="Arial Black">I have included some
+scans of the actual computer too. I thought, 'Why not?'. Once
+again, the scans arn't exactly the best.</font></p>
+
+<ul>
+    <li><a href="6502_components.jpg"><font face="Arial Black">Top
+        (component) view</font></a><font color="#0000FF"
+        face="Arial Black"> </font><font color="#00FF00"
+        face="Arial Black">(JPEG, 66Kb)</font></li>
+    <li><a href="6502_wire.jpeg"><font face="Arial Black">Bottom
+        (wire wrap) view</font></a><font color="#0000FF"
+        face="Arial Black"> </font><font color="#00FF00"
+        face="Arial Black">(JPEG, 262Kb)</font></li>
+</ul>
+
+<p><font color="#0000FF" face="Arial Black">Looking at the wire
+wrap, you can see why it is a little difficult to debug.</font></p>
+
+<hr>
+
+<p><font color="#0000FF" face="Arial Black">The thing is a pain
+to program. To save money, I decided to get two 8-bit dip
+switches rather than 16 toggle switches (which would have been
+too large anyway). </font></p>
+
+<p><font color="#0000FF" face="Arial Black">Like the original
+Altair, you specify your address via all 16 dip switches and load
+it. Here it is loaded into four </font><font color="#00FFFF"
+face="Arial Black">74LS161</font><font color="#0000FF"
+face="Arial Black"> 4-bit binary counters by holding down the
+load and clock buttons (the load function is synchronous, see the
+data sheets).</font></p>
+
+<p><font color="#0000FF" face="Arial Black">To load data into
+memory, you toggle in your value into the lower dip swich, press
+the load button, then the clock button. The load button pulls a </font><font
+color="#00FFFF" face="Arial Black">74LS244</font><font
+color="#0000FF" face="Arial Black"> out of high impendance state
+and pulls the R/W line low, writing the value to memory. The
+clock button increaces the address value in the four </font><font
+color="#00FFFF" face="Arial Black">74LS161</font><font
+color="#0000FF" face="Arial Black">'s.</font></p>
+
+<p><font color="#0000FF" face="Arial Black">To run the program
+(when you finally load everything), you flip the toggle switch
+which puts all of the </font><font color="#00FFFF"
+face="Arial Black">74LS244</font><font color="#0000FF"
+face="Arial Black">'s on the DMA board into high impendance state
+and all of the </font><font color="#00FFFF" face="Arial Black">74LS244</font><font
+color="#0000FF" face="Arial Black">'s on the CPU board into
+normal state. This activates the 6502 and runs the program.</font></p>
+
+<p><font color="#0000FF" face="Arial Black">The 6502 is halted by
+lowering the reset line of the CPU. This is easier than adding
+extra wiring to use the RDY line. I also want to reset the CPU
+afterwards anyway rather than halting it.</font></p>
+
+<hr>
+
+<p><font color="#0000FF" face="Arial Black">Here are some data
+sheets that I have found usefull.</font></p>
+
+<ul>
+    <li><a href="DM74LS138.pdf"><font face="Arial Black">74LS138</font></a><font
+        face="Arial Black"> </font><font color="#00FF00"
+        face="Arial Black">(PDF, 82Kb)</font></li>
+    <li><a href="DM74LS161A.pdf"><font face="Arial Black">74LS161</font></a><font
+        face="Arial Black"> </font><font color="#00FF00"
+        face="Arial Black">(PDF, 103Kb)</font></li>
+    <li><a href="DM74LS244.pdf"><font face="Arial Black">74LS244</font></a><font
+        face="Arial Black"> </font><font color="#00FF00"
+        face="Arial Black">(PDF, 66Kb)</font></li>
+    <li><a href="DM74LS367A.pdf"><font face="Arial Black">74LS367</font></a><font
+        face="Arial Black"> </font><font color="#00FF00"
+        face="Arial Black">(PDF, 47Kb)</font></li>
+    <li><a href="6264.txt"><font face="Arial Black">6264 SRAM</font></a><font
+        face="Arial Black"> </font><font color="#00FF00"
+        face="Arial Black">(TXT, 492 bytes)</font></li>
+    <li><a href="62256.pdf"><font face="Arial Black">62256 SRAM</font></a><font
+        face="Arial Black"> </font><font color="#00FF00"
+        face="Arial Black">(PDF, 143Kb)</font></li>
+</ul>
+
+<hr>
+
+<p><font color="#0000FF" face="Arial Black">Below is a link to a
+computer that was built in the late 70's and early 80's, called
+the Chaos computer. I quite liked it.</font></p>
+
+<p><a href="http://koo.corpus.cam.ac.uk/chaos/"><font
+color="#0000FF" face="Arial Black">http://koo.corpus.cam.ac.uk/chaos/</font></a></p>
+
+<hr>
+
+<p><font color="#0000FF" face="Arial Black">If you would like to
+contact me, my e-mail address is </font><a
+href="mailto:alexis@kaput.homeunix.org"><font face="Arial Black">alexis@kaput.homeunix.org</font></a><font
+color="#0000FF" face="Arial Black">.</font></p>
+
+<hr>
+
+<p>This page is written by Alexis Kotlowy-Brown - Don't rob me of
+it. I will not be responsible for any loss of anything.</p>
+</body>
+</html>
